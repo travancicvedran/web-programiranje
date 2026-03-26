@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CineVault - baza podataka filmova s ocjenama, žanrovima i detaljima o filmovima iz cijelog svijeta.">
+  <meta name="keywords" content="filmovi, baza filmova, ocjene filmova, žanrovi, kino">
+  <meta name="author" content="CineVault">
+  <meta property="og:title" content="CineVault - Filmska Baza Podataka">
+  <title>CineVault — Filmska Baza Podataka</title>
+  <link rel="stylesheet" href="style_main.css">
+</head>
+<body>
+
+  <!-- Zaglavlje stranice s navigacijom -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <span class="logo-text">CINE<em>VAULT</em></span>
+
+      <!-- Hamburger gumb za mobilnu navigaciju (CSS only) -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="Otvori navigacijski izbornik" role="button">
+        <span></span><span></span><span></span>
+      </label>
+
+      <!-- Primarna navigacija -->
+      <nav class="main-nav" aria-label="Primarna navigacija">
+        <ul role="list">
+          <li><a href="index.html" class="nav-link active" aria-current="page">Početna</a></li>
+          <li><a href="grafikon.html" class="nav-link">Grafikoni</a></li>
+          <li><a href="slike.html" class="nav-link">Galerija</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" aria-labelledby="hero-title">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="hero-eyebrow">Dobrodošli u</p>
+      <h1 id="hero-title" class="hero-title">CINEVAULT</h1>
+  </section>
+
+  <main id="main-content">
+
+    <section id="films" class="films-section" aria-labelledby="films-title">
+      <div class="section-header">
+        <h2 id="films-title" class="section-title">Popis Filmova</h2>
+      </div>
+
+      <div class="films-layout">
+        <div class="table-wrapper">
+          <table class="films-table" aria-label="Tablica filmova s osnovnim podacima">
+          <thead>
+            <tr>
+              <th scope="col">Naslov</th>
+              <th scope="col">Godina</th>
+              <th scope="col">Žanr</th>
+              <th scope="col">Trajanje</th>
+              <th scope="col">Država</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Dick Johnson Is Dead</td><td>2020</td><td><span class="genre-tag">Documentaries</span></td><td>90 min</td><td>United States</td></tr>
+            <tr><td>Blood & Water</td><td>2021</td><td><span class="genre-tag">International TV Shows, TV Dramas, TV Mysteries</span></td><td>2 Seasons</td><td>South Africa</td></tr>
+            <tr><td>Ganglands</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, International TV Shows</span></td><td>1 Season</td><td></td></tr>
+            <tr><td>Jailbirds New Orleans</td><td>2021</td><td><span class="genre-tag">Docuseries, Reality TV</span></td><td>1 Season</td><td></td></tr>
+            <tr><td>Kota Factory</td><td>2021</td><td><span class="genre-tag">International TV Shows, Romantic TV Shows, TV Comedies</span></td><td>2 Seasons</td><td>India</td></tr>
+            <tr><td>Midnight Mass</td><td>2021</td><td><span class="genre-tag">TV Dramas, TV Horror, TV Mysteries</span></td><td>1 Season</td><td></td></tr>
+            <tr><td>My Little Pony: A New Generation</td><td>2021</td><td><span class="genre-tag">Children & Family Movies</span></td><td>91 min</td><td></td></tr>
+            <tr><td>Sankofa</td><td>1993</td><td><span class="genre-tag">Dramas, Independent Movies, International Movies</span></td><td>125 min</td><td>United States, Ghana, Burkina Faso, United Kingdom, Germany, Ethiopia</td></tr>
+            <tr><td>The Great British Baking Show</td><td>2021</td><td><span class="genre-tag">British TV Shows, Reality TV</span></td><td>9 Seasons</td><td>United Kingdom</td></tr>
+            <tr><td>The Starling</td><td>2021</td><td><span class="genre-tag">Comedies, Dramas</span></td><td>104 min</td><td>United States</td></tr>
+            <tr><td>Vendetta: Truth, Lies and The Mafia</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, Docuseries, International TV Shows</span></td><td>1 Season</td><td></td></tr>
+            <tr><td>Bangkok Breaking</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, International TV Shows</span></td><td>1 Season</td><td></td></tr>
+            <tr><td>Je Suis Karl</td><td>2021</td><td><span class="genre-tag">Dramas, International Movies</span></td><td>127 min</td><td>Germany, Czech Republic</td></tr>
+            <tr><td>Confessions of an Invisible Girl</td><td>2021</td><td><span class="genre-tag">Children & Family Movies, Comedies</span></td><td>91 min</td><td></td></tr>
+            <tr><td>My Little Pony: A New Generation</td><td>2021</td><td><span class="genre-tag">Children & Family Movies</span></td><td>91 min</td><td></td></tr>
+          </tbody>
+        </table>
+        </div>
+          <aside>
+            <div class="side-images">
+              <img src="https://unsplash.it/300/200?random=1" alt="Slika 1">
+              <img src="https://unsplash.it/300/200?random=2" alt="Slika 2">
+            </div>
+          </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="CineVault logo u podnožju">CINEVAULT</div>
+      <p class="footer-copy">© 1999 CineVault</p>
+    </div>
+  </footer>
+
+</body>
+</html>
