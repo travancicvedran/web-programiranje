@@ -38,72 +38,27 @@
       <h1 class="section-title gallery-main-title">GALERIJA SLIKA</h1>
     </div>
 
-    
-    <div id="lb-1"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 1">
+    <!-- <div id="lb-1"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 1">
       <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
       <img src="https://unsplash.it/900/?random=1" alt="Kino 1 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-2"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 2">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=2" alt="Kino 2 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-3"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 3">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=3" alt="Kino 3 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-4"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 4">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=4" alt="Kino 4 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-5"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 5">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=5" alt="Kino 5 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-6"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 6">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=6" alt="Kino 6 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-7"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 7">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=7" alt="Kino 7 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-8"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 8">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=8" alt="Kino 8 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-9"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 9">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=9" alt="Kino 9 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-10" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 10">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=10" alt="Kino 10 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-11" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 11">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=11" alt="Kino 11 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-12" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 12">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=12" alt="Kino 12 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-13" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 13">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=13" alt="Kino 13 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-14" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 14">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=14" alt="Kino 14 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-15" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 15">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=15" alt="Kino 15 - puna veličina" loading="lazy">
-    </div>
-    <div id="lb-16" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 16">
-      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
-      <img src="https://unsplash.it/900/?random=16" alt="Kino 16 - puna veličina" loading="lazy">
-    </div>
+    </div> -->
+    <div id="lightbox-container"></div>
 
+    <script>
+      const container = document.getElementById("lightbox-container");
+
+      for (let i = 1; i <= 14; i++) {
+        const randomNum = Math.floor(Math.random() * 100) + 1; 
+
+        container.innerHTML += `
+          <div id="lb-${i}" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika ${i}">
+            <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
+            <img src="https://unsplash.it/900/?random=${randomNum}" alt="Kino ${i} - puna veličina" loading="lazy">
+          </div>
+        `;
+      }
+    </script>
+    
     <!-- Galerija grid -->
     <section class="galerija" aria-labelledby="gallery-title">
       <h2 id="gallery-title" class="sr-only">Galerija fotografija</h2>
