@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="CineVault — pregled košarice odabranih filmova za posudbu.">
+  <title>Košarica — CineVault</title>
+  <link rel="stylesheet" href="style/style_main.css">
+</head>
+<body>
+
+  <!-- Zaglavlje -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <span class="logo-text">CINE<em>VAULT</em></span>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="Otvori navigacijski izbornik" role="button">
+        <span></span><span></span><span></span>
+      </label>
+
+      <nav class="main-nav" aria-label="Primarna navigacija">
+        <ul role="list">
+          <li><a href="index.html" class="nav-link">Početna</a></li>
+          <li><a href="grafikon.html" class="nav-link">Grafikoni</a></li>
+          <li><a href="slike.html" class="nav-link">Galerija</a></li>
+          <li>
+            <a href="kosarica.html" class="nav-link active" aria-current="page">
+              Košarica
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <section class="cart-section" aria-labelledby="cart-title">
+
+      <div class="section-header">
+        <h2 id="cart-title" class="section-title">
+          Košarica
+          <span class="cart-count-badge" id="cart-counter">0</span>
+          <span class="cart-count-label">odabranih filmova</span>
+        </h2>
+      </div>
+
+      <!-- Poruka kad je košarica prazna -->
+      <div id="cart-empty" class="cart-empty" style="display:none;">
+        <p class="cart-empty__icon">:(</p>
+        <p class="cart-empty__text">Vaša košarica je prazna.</p>
+        <a href="index.html" class="btn-back">Odaberi filmove</a>
+      </div>
+
+      <!-- Tablica filmova u košarici (dinamicki popunjeno) -->
+      <div id="cart-content" class="table-wrapper"></div>
+
+      <!-- Akcijski gumbi -->
+      <div id="cart-actions" class="cart-actions" style="display:none;">
+        <button id="btn-clear-cart" class="btn-clear" type="button">
+          🗑 Isprazni košaricu
+        </button>
+        <button id="btn-confirm-loan" class="btn-confirm" type="button">
+          ✔ Potvrdi posudbu
+        </button>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="CineVault logo u podnožju">CINEVAULT</div>
+      <p class="footer-copy">© 1999 CineVault</p>
+    </div>
+  </footer>
+
+  <script src="script/kosarica.js"></script>
+
+</body>
+</html>
