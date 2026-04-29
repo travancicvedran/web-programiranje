@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="style/style_main.css">
 </head>
 <body>
-
+  <script src="script/index.js"></script>
   <!-- Zaglavlje stranice s navigacijom -->
   <header class="site-header" role="banner">
     <div class="header-inner">
@@ -30,6 +30,7 @@
           <li><a href="index.html" class="nav-link active" aria-current="page">Početna</a></li>
           <li><a href="grafikon.html" class="nav-link">Grafikoni</a></li>
           <li><a href="slike.html" class="nav-link">Galerija</a></li>
+          <li><a href="kosarica.html" class="nav-link">Košarica <span id="cart-badge" class="cart-badge" style="display:none;">0</span></a></li>
         </ul>
       </nav>
     </div>
@@ -50,6 +51,47 @@
       </div>
 
       <div class="films-layout">
+        <div class="films-layout vertical">
+
+
+        <div class="filters-panel">
+
+          <div class="filter-group">
+            <label for="filter-genre">Žanr</label>
+            <select id="filter-genre">
+              <option value="">— Svi —</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-country">Država</label>
+            <select id="filter-country">
+              <option value="">— Sve —</option>
+            </select>
+          </div>
+
+          <div class="filter-group">
+            <label for="filter-rating">Min. ocjena (0–10)</label>
+            <input type="number" id="filter-rating"
+                  min="0" max="10" step="0.1" placeholder="npr. 7.5">
+          </div>
+
+          <div class="filter-group filter-group--years">
+            <label>Raspon godina</label>
+            <div class="year-range">
+              <span id="year-min-label">—</span>
+              <input type="range" id="filter-year-min">
+              <input type="range" id="filter-year-max">
+              <span id="year-max-label">—</span>
+            </div>
+          </div>
+
+          <div class="filter-group filter-group--reset">
+            <button id="btn-reset-filters" type="button">Resetiraj filtere</button>
+          </div>
+
+        </div>
+
         <div class="table-wrapper">
           <table class="films-table" aria-label="Tablica filmova s osnovnim podacima">
           <thead>
@@ -59,26 +101,16 @@
               <th scope="col">Žanr</th>
               <th scope="col">Trajanje</th>
               <th scope="col">Država</th>
+              <th scope="col">Ocjena</th>
+              <th scope="col">Dodaj</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>Dick Johnson Is Dead</td><td>2020</td><td><span class="genre-tag">Documentaries</span></td><td>90 min</td><td>United States</td></tr>
-            <tr><td>Blood & Water</td><td>2021</td><td><span class="genre-tag">International TV Shows, TV Dramas, TV Mysteries</span></td><td>2 Seasons</td><td>South Africa</td></tr>
-            <tr><td>Ganglands</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, International TV Shows</span></td><td>1 Season</td><td></td></tr>
-            <tr><td>Jailbirds New Orleans</td><td>2021</td><td><span class="genre-tag">Docuseries, Reality TV</span></td><td>1 Season</td><td></td></tr>
-            <tr><td>Kota Factory</td><td>2021</td><td><span class="genre-tag">International TV Shows, Romantic TV Shows, TV Comedies</span></td><td>2 Seasons</td><td>India</td></tr>
-            <tr><td>Midnight Mass</td><td>2021</td><td><span class="genre-tag">TV Dramas, TV Horror, TV Mysteries</span></td><td>1 Season</td><td></td></tr>
-            <tr><td>My Little Pony: A New Generation</td><td>2021</td><td><span class="genre-tag">Children & Family Movies</span></td><td>91 min</td><td></td></tr>
-            <tr><td>Sankofa</td><td>1993</td><td><span class="genre-tag">Dramas, Independent Movies, International Movies</span></td><td>125 min</td><td>United States, Ghana, Burkina Faso, United Kingdom, Germany, Ethiopia</td></tr>
-            <tr><td>The Great British Baking Show</td><td>2021</td><td><span class="genre-tag">British TV Shows, Reality TV</span></td><td>9 Seasons</td><td>United Kingdom</td></tr>
-            <tr><td>The Starling</td><td>2021</td><td><span class="genre-tag">Comedies, Dramas</span></td><td>104 min</td><td>United States</td></tr>
-            <tr><td>Vendetta: Truth, Lies and The Mafia</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, Docuseries, International TV Shows</span></td><td>1 Season</td><td></td></tr>
-            <tr><td>Bangkok Breaking</td><td>2021</td><td><span class="genre-tag">Crime TV Shows, International TV Shows</span></td><td>1 Season</td><td></td></tr>
-            <tr><td>Je Suis Karl</td><td>2021</td><td><span class="genre-tag">Dramas, International Movies</span></td><td>127 min</td><td>Germany, Czech Republic</td></tr>
-            <tr><td>Confessions of an Invisible Girl</td><td>2021</td><td><span class="genre-tag">Children & Family Movies, Comedies</span></td><td>91 min</td><td></td></tr>
-            <tr><td>My Little Pony: A New Generation</td><td>2021</td><td><span class="genre-tag">Children & Family Movies</span></td><td>91 min</td><td></td></tr>
           </tbody>
         </table>
+        </div>
+        <p id="results-count" class="results-count"></p>
+
         </div>
           <aside>
             <div class="side-images">
