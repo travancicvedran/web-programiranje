@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="hr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- SEO meta tagovi za stranicu galerije -->
+  <meta name="description" content="CineVault Galerija - kolekcija fotografija vezanih uz filmsku umjetnost i kinematografiju">
+  <meta name="author" content="CineVault">
+  <title>CineVault — Galerija slika</title>
+  <link rel="stylesheet" href="assets/style/style_main.css">
+  <link rel="stylesheet" href="assets/style/style_slike.css">
+</head>
+<body>
+
+  <!-- Zaglavlje -->
+  <header class="site-header" role="banner">
+    <div class="header-inner">
+      <div class="logo" aria-label="CineVault logo">
+        <span class="logo-text">CINE<em>VAULT</em></span>
+      </div>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="nav-burger" aria-label="Otvori navigacijski izbornik" role="button">
+        <span></span><span></span><span></span>
+      </label>
+      <nav class="main-nav" aria-label="Primarna navigacija">
+        <ul role="list">
+          <li><a href="index.php" class="nav-link">Početna</a></li>
+          <li><a href="grafikon.php" class="nav-link">Grafikoni</a></li>
+          <li><a href="slike.php" class="nav-link active" aria-current="page">Galerija</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <div class="gallery-page-header">
+      <h1 class="section-title gallery-main-title">GALERIJA SLIKA</h1>
+    </div>
+
+    <!-- <div id="lb-1"  class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika 1">
+      <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
+      <img src="https://unsplash.it/900/?random=1" alt="Kino 1 - puna veličina" loading="lazy">
+    </div> -->
+    <div id="lightbox-container"></div>
+
+    <script>
+      const container = document.getElementById("lightbox-container");
+
+      for (let i = 1; i <= 14; i++) {
+        const randomNum = Math.floor(Math.random() * 100) + 1; 
+
+        container.innerHTML += `
+          <div id="lb-${i}" class="lightbox-overlay" role="dialog" aria-label="Lightbox - Slika ${i}">
+            <a href="#" class="lb-close" aria-label="Zatvori lightbox">✕ Zatvori</a>
+            <img src="https://unsplash.it/900/?random=${randomNum}" alt="Kino ${i} - puna veličina" loading="lazy">
+          </div>
+        `;
+      }
+    </script>
+    
+    <!-- Galerija grid -->
+    <section class="galerija" aria-labelledby="gallery-title">
+      <h2 id="gallery-title" class="sr-only">Galerija fotografija</h2>
+
+      <div class="gallery-grid" role="list">
+
+        <!-- Slika 1 -->
+        <figure class="gallery-item" role="listitem">
+          <!-- Linkovi prema lb-N za CSS lightbox bez JavaScripta -->
+          <a href="#lb-1" class="gallery-link" aria-label="Otvori sliku 1 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=1"
+                 alt="Filmska fotografija 1 - kino tema"
+                 loading="lazy"
+                 width="300" height="200">
+            <!-- Caption overlay koji se prikazuje pri hover -->
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 1</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 1</figcaption>
+        </figure>
+
+        <!-- Slika 2 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-2" class="gallery-link" aria-label="Otvori sliku 2 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=2" alt="Filmska fotografija 2" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 2</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 2</figcaption>
+        </figure>
+
+        <!-- Slika 3 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-3" class="gallery-link" aria-label="Otvori sliku 3 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=3" alt="Filmska fotografija 3" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 3</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 3</figcaption>
+        </figure>
+
+        <!-- Slika 4 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-4" class="gallery-link" aria-label="Otvori sliku 4 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=4" alt="Filmska fotografija 4" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 4</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 4</figcaption>
+        </figure>
+
+        <!-- Slika 5 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-5" class="gallery-link" aria-label="Otvori sliku 5 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=5" alt="Filmska fotografija 5" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 5</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 5</figcaption>
+        </figure>
+
+        <!-- Slika 6 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-6" class="gallery-link" aria-label="Otvori sliku 6 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=6" alt="Filmska fotografija 6" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 6</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 6</figcaption>
+        </figure>
+
+        <!-- Slika 7 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-7" class="gallery-link" aria-label="Otvori sliku 7 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=7" alt="Filmska fotografija 7" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 7</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 7</figcaption>
+        </figure>
+
+        <!-- Slika 8 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-8" class="gallery-link" aria-label="Otvori sliku 8 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=8" alt="Filmska fotografija 8" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 8</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 8</figcaption>
+        </figure>
+
+        <!-- Slika 9 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-9" class="gallery-link" aria-label="Otvori sliku 9 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=9" alt="Filmska fotografija 9" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 9</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 9</figcaption>
+        </figure>
+
+        <!-- Slika 10 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-10" class="gallery-link" aria-label="Otvori sliku 10 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=10" alt="Filmska fotografija 10" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 10</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 10</figcaption>
+        </figure>
+
+        <!-- Slika 11 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-11" class="gallery-link" aria-label="Otvori sliku 11 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=11" alt="Filmska fotografija 11" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 11</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 11</figcaption>
+        </figure>
+
+        <!-- Slika 12 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-12" class="gallery-link" aria-label="Otvori sliku 12 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=12" alt="Filmska fotografija 12" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 12</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 12</figcaption>
+        </figure>
+
+        <!-- Slika 13 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-13" class="gallery-link" aria-label="Otvori sliku 13 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=13" alt="Filmska fotografija 13" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 13</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 13</figcaption>
+        </figure>
+
+        <!-- Slika 14 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-14" class="gallery-link" aria-label="Otvori sliku 14 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=14" alt="Filmska fotografija 14" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 14</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 14</figcaption>
+        </figure>
+
+        <!-- Slika 15 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-15" class="gallery-link" aria-label="Otvori sliku 15 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=15" alt="Filmska fotografija 15" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 15</span>
+             </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 15</figcaption>
+        </figure>
+
+        <!-- Slika 16 -->
+        <figure class="gallery-item" role="listitem">
+          <a href="#lb-16" class="gallery-link" aria-label="Otvori sliku 16 u punoj veličini">
+            <img src="https://unsplash.it/300/200?random=16" alt="Filmska fotografija 16" loading="lazy" width="300" height="200">
+            <span class="gallery-overlay" aria-hidden="true">
+              <span class="gallery-caption">Slika 16</span>
+            </span>
+          </a>
+          <figcaption class="sr-only">Filmska fotografija broj 16</figcaption>
+        </figure>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-logo" aria-label="CineVault logo">CINEVAULT</div>
+      <p class="footer-copy">© 1999 CineVault</p>
+    </div>
+  </footer>
+
+</body>
+</html>
