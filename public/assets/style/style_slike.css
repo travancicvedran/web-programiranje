@@ -83,31 +83,32 @@
   padding: 1rem 2rem 4rem;
 }
 
-/* Responzivni grid: auto-fill s minimalnom širinom */
 .gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: var(--gallery-gap);
-  max-width: var(--max-width);
-  margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+	gap: var(--gallery-gap);
+	max-width: var(--max-width);
+	margin: 0 auto;
 }
 
 .gallery-item {
-  position: relative;
-  overflow: hidden;
-  border-radius: var(--gallery-radius);  /* CSS varijabla */
-  border: 1px solid var(--color-border);
-  aspect-ratio: 3 / 2;
+	position: relative;
+	overflow: visible;
+	border-radius: var(--gallery-radius);
+	border: 1px solid var(--color-border);
+
+	display: flex;
+	flex-direction: column;
 }
 
-
-/* Link koji obuhvaća sliku i overlay */
 .gallery-link {
-  display: block;
-  position: relative;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
+	display: block;
+	position: relative;
+	width: 100%;
+
+	aspect-ratio: 3 / 2;
+
+	overflow: hidden;
 }
 
 /* Slika u galeri */
@@ -221,4 +222,133 @@
     padding: 0.5rem 1.2rem;
     font-size: 0.8rem;
   }
+}
+
+/* ── Upload sekcija ──────────────────────────────────────────────────────── */
+.upload-section {
+  max-width: 700px;
+  margin: 2rem auto 1rem;
+  padding: 1.5rem 2rem;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+
+.upload-title {
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent, #e5b33b);
+  margin-bottom: 1rem;
+}
+
+.upload-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.upload-form input[type="file"],
+.upload-form input[type="text"] {
+  padding: 0.5rem 0.75rem;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 6px;
+  color: inherit;
+  font-size: 0.9rem;
+}
+
+.upload-form input[type="text"] {
+  flex: 1;
+  min-width: 180px;
+}
+
+.btn-upload {
+  padding: 0.5rem 1.25rem;
+  background: var(--accent, #e5b33b);
+  color: #111;
+  border: none;
+  border-radius: 6px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.btn-upload:hover  { opacity: 0.85; }
+.btn-upload:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.upload-note {
+  font-size: 0.78rem;
+  opacity: 0.6;
+  margin-top: 0.5rem;
+}
+
+/* ── Rating container ────────────────────────────────────────────────────── */
+.rating-container {
+  padding: 0.6rem 0.5rem 0.4rem;
+  text-align: center;
+  background: rgba(0,0,0,0.3);
+  min-height: 80px;
+}
+
+/* Prosječna ocjena */
+.avg-rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.4rem;
+}
+
+.avg-stars {
+  color: #f5c518; /* IMDb žuta */
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.avg-number {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* Interaktivne zvjezdice */
+.star-rating {
+  display: flex;
+  justify-content: center;
+  gap: 2px;
+  margin-bottom: 0.25rem;
+}
+
+.star-rating .star {
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: rgba(255,255,255,0.25);
+  cursor: pointer;
+  padding: 0 1px;
+  transition: color 0.15s, transform 0.1s;
+  line-height: 1;
+}
+
+.star-rating .star.active,
+.star-rating .star.hover {
+  color: #f5c518;
+}
+
+.star-rating .star:hover,
+.star-rating .star.hover {
+  transform: scale(1.2);
+}
+
+.rating-hint {
+  font-size: 0.72rem;
+  opacity: 0.6;
+  margin: 0;
+}
+
+.rating-hint a {
+  color: var(--accent, #e5b33b);
+  text-decoration: underline;
 }
